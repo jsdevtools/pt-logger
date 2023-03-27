@@ -1,6 +1,6 @@
 {
   "name": "@jestaubach/pt-logger",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "main": "./dist/pt-logger.umd.cjs",
   "module": "./dist/pt-logger.js",
