@@ -1,7 +1,7 @@
 import { test, expect, vi } from 'vitest';
-import * as ptlogger from './pt-logger';
+import ptlogger from './pt-logger';
 
-const logger = ptlogger.configure({
+const logger = ptlogger({
   hostname: "localhost",
   program: "test",
   level: "info",

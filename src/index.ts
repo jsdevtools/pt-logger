@@ -1,1 +1,1 @@
-export { configure } from './pt-logger';
+export { default as ptlogger } from './pt-logger';

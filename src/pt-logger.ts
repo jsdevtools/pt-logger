@@ -60,6 +60,4 @@ function configure( { hostname, program, level, remote, host, port, }: ptLoggerO
   return logger;
 }
 
-export {
-  configure
-};
+export default configure;
