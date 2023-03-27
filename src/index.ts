@@ -1,2 +1,2 @@
-import ptlogger from './pt-logger';
-export default ptlogger;
+import configure from './pt-logger';
+export default { configure };

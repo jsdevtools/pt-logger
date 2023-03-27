@@ -13,3 +13,13 @@ Adapted from "Standard" Release Process described [here](https://cloudfour.com/t
 7. npm publish --access=public
 ## git push
 8. git push -u origin --tags
+
+# Debugging
+## Make changes available for use
+1. npm run build
+2. npm link
+## Use as a dependency in another project
+3. npm link ../pt-logger
+4. (test changes)
+## Uninstall linked dependency
+5. npm unlink ../pt-logger

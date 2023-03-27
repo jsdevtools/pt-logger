@@ -1,7 +1,5 @@
 import winston from 'winston';
 import { Papertrail } from 'winston-papertrail';
-//const winston = require('winston');
-//const { Papertrail } = require('winston-papertrail');
 
 interface ptLoggerOptions {
   hostname: string,
@@ -12,13 +10,9 @@ interface ptLoggerOptions {
   port: string|number,
 }
 
-function ptlogger( { hostname, program, level, remote, host, port, }: ptLoggerOptions ) {
+function configure( { hostname, program, level, remote, host, port, }: ptLoggerOptions ) {
   const consoleLogger = new winston.transports.Console({
     level,
-    //timestamp() {
-    //  return new Date().toString();
-    //},
-    //colorize: true,
   });
 
   if (remote.toString().toUpperCase() === 'TRUE') {
@@ -60,4 +54,4 @@ function ptlogger( { hostname, program, level, remote, host, port, }: ptLoggerOp
   return logger;
 }
 
-export default ptlogger;
+export default configure;

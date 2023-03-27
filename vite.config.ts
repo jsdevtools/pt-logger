@@ -8,15 +8,14 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'ptlogger',
+      name: 'pt-logger',
       fileName: 'pt-logger',
     },
     rollupOptions: {
       external: ['winston', 'winston-papertrail'],
       output: {
         globals: {
-          winston: 'winston',
-          'winston-papertrail': 'Papertrail'
+          // ...
         },
       },
     }

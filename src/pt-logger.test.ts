@@ -1,7 +1,7 @@
 import { test, expect, vi } from 'vitest';
 import ptlogger from './index';
 
-const logger = ptlogger({
+const logger = ptlogger.configure({
   hostname: "localhost",
   program: "test",
   level: "info",
