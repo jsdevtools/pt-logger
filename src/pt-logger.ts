@@ -12,7 +12,7 @@ interface ptLoggerOptions {
   port: string|number,
 }
 
-function configure( { hostname, program, level, remote, host, port, }: ptLoggerOptions ) {
+function ptlogger( { hostname, program, level, remote, host, port, }: ptLoggerOptions ) {
   const consoleLogger = new winston.transports.Console({
     level,
     //timestamp() {
@@ -60,4 +60,4 @@ function configure( { hostname, program, level, remote, host, port, }: ptLoggerO
   return logger;
 }
 
-export default configure;
+export default ptlogger;

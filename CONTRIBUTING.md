@@ -12,4 +12,4 @@ Adapted from "Standard" Release Process described [here](https://cloudfour.com/t
 ## Publish to npm
 7. npm publish --access=public
 ## git push
-8. git push --tags
+8. git push -u origin --tags

@@ -1,5 +1,5 @@
 import { test, expect, vi } from 'vitest';
-import ptlogger from './pt-logger';
+import ptlogger from './index';
 
 const logger = ptlogger({
   hostname: "localhost",

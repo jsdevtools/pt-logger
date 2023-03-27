@@ -1,1 +1,2 @@
-export { default as ptlogger } from './pt-logger';
+import ptlogger from './pt-logger';
+export default ptlogger;
