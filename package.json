@@ -1,0 +1,42 @@
+{
+  "name": "@jsdevtools/pt-logger",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/pt-logger.umd.cjs",
+  "module": "./dist/pt-logger.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/pt-logger.js",
+      "require": "./dist/pt-logger.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.10",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "^2.8.7",
+    "typescript": "^4.9.5",
+    "vite": "^4.2.0",
+    "vite-plugin-dts": "^2.1.0",
+    "vitest": "^0.29.7"
+  },
+  "dependencies": {
+    "winston": "^3.8.2",
+    "winston-papertrail": "^1.0.5"
+  }
+}
