@@ -40,7 +40,10 @@ function configure( { hostname, program, level, remote, host, port, }: ptLoggerO
       transports: [ptTransport, consoleLogger],
     });
 
-    ptTransport.on('error', (err: any) => logger && logger.error(err));
+    ptTransport.on('error', (err: any) => {
+      console.error(`ptTransport error: ${err}`);
+      // logger && logger.error(err));
+    });
     ptTransport.on('connect', (message: any) => logger && logger.info(message));
   
     return logger;
