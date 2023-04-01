@@ -15,6 +15,12 @@ function configure( { hostname, program, level, remote, host, port, }: ptLoggerO
     level,
   });
 
+  // eslint-disable-next-line new-cap
+  const logger = new (winston.createLogger as any)({
+    transports: [consoleLogger],
+    exitOnError: false,
+  });
+
   if (remote.toString().toUpperCase() === 'TRUE') {
     const ptTransport = new Papertrail({
       host,
@@ -26,33 +32,16 @@ function configure( { hostname, program, level, remote, host, port, }: ptLoggerO
       hostname,
       program,
     });
-    
-    // monkey pach papertrail to remove meta from log() args
-    const { log } = ptTransport;
-    // eslint-disable-next-line func-names
-    ptTransport.log = function(level:string, msg:string, meta:any, callback:any) {
-      const cb = callback === undefined ? meta : callback;
-      return log.apply(this, [level, msg, cb]);
-    };
-
-    // eslint-disable-next-line new-cap
-    const logger = new (winston.createLogger as any)({
-      transports: [ptTransport, consoleLogger],
-    });
 
     ptTransport.on('error', (err: any) => {
-      console.error(`ptTransport error: ${err}`);
-      // logger && logger.error(err));
+      logger && logger.error(`ptTransport error: ${err}`);
     });
-    ptTransport.on('connect', (message: any) => logger && logger.info(message));
-  
-    return logger;
-  }
 
-  // eslint-disable-next-line new-cap
-  const logger = new (winston.createLogger as any)({
-    transports: [consoleLogger],
-  });
+    ptTransport.on('connect', (message: any) => {
+      logger.add(ptTransport);
+      logger && logger.info(message);
+    });
+  }
 
   return logger;
 }
