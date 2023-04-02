@@ -18,8 +18,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest",
-    "start-test": "echo \"./node_modules/forever/bin/forever --killSignal=SIGTERM -c 'node ./node_modules/nodemon/bin/nodemon.js --exitcrash' test.cjs\""
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/node": "^18.15.10",
@@ -31,8 +30,6 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
-    "forever": "^4.0.3",
-    "nodemon": "^2.0.22",
     "prettier": "^2.8.7",
     "typescript": "^4.9.5",
     "vite": "^4.2.1",

@@ -43,6 +43,12 @@ function configure( { hostname, program, level, remote, host, port, }: ptLoggerO
     });
   }
 
+  logger.stream = {
+    write: (message:string, _encoding:any) => {
+      logger.info(message);
+    },
+  };
+
   return logger;
 }
 
